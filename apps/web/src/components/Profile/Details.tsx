@@ -215,6 +215,15 @@ const Details: FC<DetailsProps> = ({ profile, following, setFollowing }) => {
                   showText
                 />
                 {currentProfile && <Message onClick={onMessageClick} />}
+                <Button
+                  className="!px-3 !py-1.5 text-sm"
+                  aria-label="Sponsor"
+                  outline={true}
+                  disabled={false}
+                // icon={<UserAddIcon className="h-4 w-4" />}
+                >
+                  {t`Sponsor`}
+                </Button>
               </div>
             )
           ) : null}
@@ -243,9 +252,8 @@ const Details: FC<DetailsProps> = ({ profile, following, setFollowing }) => {
           >
             <Tooltip content={`#${profile?.id}`}>
               <Link
-                href={`${RARIBLE_URL}/token/polygon/${
-                  getEnvConfig().lensHubProxyAddress
-                }:${parseInt(profile?.id)}`}
+                href={`${RARIBLE_URL}/token/polygon/${getEnvConfig().lensHubProxyAddress
+                  }:${parseInt(profile?.id)}`}
                 target="_blank"
                 rel="noreferrer"
               >

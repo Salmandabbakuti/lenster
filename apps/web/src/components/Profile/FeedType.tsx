@@ -3,7 +3,8 @@ import {
   CollectionIcon,
   FilmIcon,
   PencilAltIcon,
-  PhotographIcon
+  PhotographIcon,
+  StarIcon
 } from '@heroicons/react/outline';
 import { TabButton } from '@lenster/ui';
 import { Leafwatch } from '@lib/leafwatch';
@@ -64,6 +65,13 @@ const FeedType: FC<FeedTypeProps> = ({ setFeedType, feedType }) => {
           active={feedType === ProfileFeedType.Nft}
           type={ProfileFeedType.Nft.toLowerCase()}
           onClick={() => switchTab(ProfileFeedType.Nft)}
+        />
+        <TabButton
+          name={t`Sponsorships`}
+          icon={<StarIcon className="h-4 w-4" />}
+          active={feedType === ProfileFeedType.Sponsorships}
+          type={ProfileFeedType.Sponsorships.toLowerCase()}
+          onClick={() => switchTab(ProfileFeedType.Sponsorships)}
         />
       </div>
       <div>{feedType === ProfileFeedType.Media && <MediaFilter />}</div>
